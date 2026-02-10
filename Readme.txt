@@ -30,7 +30,7 @@ TERMUX
 
 LINUX | DEBIAN
 
-1° - Abra o terminal e instale as seguintes ferramentas:  sudo apt install git, curl, wget.
+1° - Abra o terminal e instale as seguintes ferramentas:  sudo apt install git curl wget
 
 2° - Instale as seguintes bibliotecas: sudo apt update && sudo apt install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
@@ -51,6 +51,8 @@ eval "$(pyenv virtualenv-init -)"
 7° - Com o terminal aberto faça o comando: pyenv install -l
 
 8° - Escolha a versão do python mais recente e estável, por exemplo: pyenv install 3.12.12
+
+9° - Coloque o python que foi instalado pelo pyenv como global: pyenv global 3.12.12
 
 9° - Após a instalação rode o comando: pip install --upgrade pip  #Vai atualizar o pip para a versão mais recente.
 
