@@ -53,7 +53,7 @@ async def listar_topicos_grupo(client, grupo_entidade):
     print("\n🔍 Buscando tópicos do fórum...")
     try:
         result = await client(GetForumTopicsRequest(
-            channel=grupo_entidade,
+            grupo_entidade,
             offset_date=None,
             offset_id=0,
             offset_topic=0,
@@ -61,9 +61,10 @@ async def listar_topicos_grupo(client, grupo_entidade):
         ))
         
         topicos = []
-        for t in result.topics:
-            titulo = getattr(t, 'title', f"Tópico {t.id}")
-            topicos.append((t.id, titulo))
+        if hasattr(result, 'topics'):
+            for t in result.topics:
+                titulo = getattr(t, 'title', f"Tópico {t.id}")
+                topicos.append((t.id, titulo))
             
         if not topicos:
             print("❌ Nenhum tópico encontrado ou o grupo não possui fórum ativo.")
