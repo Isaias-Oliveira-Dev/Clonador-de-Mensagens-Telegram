@@ -57,7 +57,7 @@ async def listar_topicos_grupo(client, grupo_entidade):
             offset_date=None,
             offset_id=0,
             offset_topic=0,
-            limit=50
+            limit=150
         ))
         
         topicos = []
